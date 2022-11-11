@@ -1,8 +1,8 @@
 <template>
   <div py-4 space-y-5>
-    <TheAvatar />
-    <TheIcon />
     <TheButton />
+    <!-- <TheAvatar />
+    <TheIcon />
     <TheSwitch />
     <TheCard />
     <TheCheckbox />
@@ -12,6 +12,6 @@
     <TheMessage />
     <ThePopup />
     <TheRate />
-    <TheCollapse />
+    <TheCollapse /> -->
   </div>
 </template>

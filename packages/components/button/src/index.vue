@@ -5,22 +5,22 @@ const props = defineProps(buttonProps)
 const slots = useSlots()
 const isDisabled = computed(() => props.loading || props.disabled)
 const onlyIcon = computed(() => slots.icon && !slots.default)
-const binds = Object.assign({}, useAttrs(), props.to ? { href: props.to } : {})
+// const binds = Object.assign({}, useAttrs(), props.to ? { href: props.to } : {})
 </script>
 
 <template>
   <component
     :is="to ? 'a' : 'button'"
-    o="primary"
-    v-bind="binds"
+    :href="to"
+    :type="to ? undefined : 'button'"
     :disabled="isDisabled"
     :aria-disabled="isDisabled"
-    class="o-button-base"
+    class="o-button o-button-base o-transition hover:o-button-hover active:o-button-active focus:o-button-focus"
     :class="[
       light ? 'o-button-light' : '',
       text ? 'o-button-text' : '',
-      `o-button-${size}`,
-      isDisabled ? 'o-disabled' : 'o-transition o-button-hover o-button-active',
+      `o-${size}`,
+      isDisabled ? 'o-disabled' : '',
       onlyIcon && 'aspect-square px-0',
     ]"
   >

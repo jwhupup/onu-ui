@@ -29,7 +29,7 @@ const startLoading = () => {
         <OButton o="error" rounded="full">
           Danger
         </OButton>
-        <OButton o="info" rounded="full">
+        <OButton o-info rounded="full">
           Info
         </OButton>
       </div>

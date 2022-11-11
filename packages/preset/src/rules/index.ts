@@ -1,4 +1,5 @@
 import { parseColor } from '@unocss/preset-mini/utils'
+import { fonts } from '@unocss/preset-mini/rules'
 import theme from '../theme'
 import { SwitchSizeMap } from '../constants'
 import type { ParsedColorValue, Rule, RuleContext } from 'unocss'
@@ -17,6 +18,7 @@ export default [
       }
     }
   }],
+  [/^o-(.*)$/, fonts[1][1] as any], // Only handle size
   [/^o-switch-(.+)$/, ([, s]: string[]) => {
     if (['sm', 'md', 'lg'].includes(s)) {
       return {
@@ -28,6 +30,6 @@ export default [
   }],
   ['o-dashed', { 'border-style': 'dashed' }],
   ['o-solid', { 'background-color': 'rgba(var(--onu-c-context), 1) !important', 'border-color': 'rgba(var(--onu-c-context), 1)', 'color': 'white !important' }],
-  ['o-disabled', { opacity: 0.4, cursor: 'not-allowed !important' }],
+  ['o-disabled', { opacity: 0.5, cursor: 'not-allowed !important' }],
   ['o-bg-clip-half', { 'clip-path': 'polygon(0% 0%, 50% 0, 50% 50%, 50% 100%, 0% 100%)' }],
 ] as Rule<Theme>[]
